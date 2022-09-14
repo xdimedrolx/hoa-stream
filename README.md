@@ -1,67 +1,28 @@
-<p align="center">
-  <img src="https://static.hoa-project.net/Image/Hoa.svg" alt="Hoa" width="250px" />
-</p>
+## Reasons to fork
+The Hoa project was archived, and no upgrades or patches are neither provided nor accepted by merge requests.
 
----
+HOA Packages include some code that is Deprecated for PHP 8.0 and PHP 8.1, but we needed these packages to run on modern PHP versions.
 
-<p align="center">
-  <a href="https://travis-ci.org/hoaproject/Stream"><img src="https://img.shields.io/travis/hoaproject/Stream/master.svg" alt="Build status" /></a>
-  <a href="https://coveralls.io/github/hoaproject/Stream?branch=master"><img src="https://img.shields.io/coveralls/hoaproject/Stream/master.svg" alt="Code coverage" /></a>
-  <a href="https://packagist.org/packages/hoa/stream"><img src="https://img.shields.io/packagist/dt/hoa/stream.svg" alt="Packagist" /></a>
-  <a href="https://hoa-project.net/LICENSE"><img src="https://img.shields.io/packagist/l/hoa/stream.svg" alt="License" /></a>
-</p>
-<p align="center">
-  Hoa is a <strong>modular</strong>, <strong>extensible</strong> and
-  <strong>structured</strong> set of PHP libraries.<br />
-  Moreover, Hoa aims at being a bridge between industrial and research worlds.
-</p>
+## What's changed in from?
+The changes mainly affected the return data type hinting in methods declaration, access to uninitialized properties.
 
-# Hoa\Stream
+## How to use
+We've currently forked the following packages, primarily to make hoa/stream work with PHP 8.1:
 
-[![Help on IRC](https://img.shields.io/badge/help-%23hoaproject-ff0066.svg)](https://webchat.freenode.net/?channels=#hoaproject)
-[![Help on Gitter](https://img.shields.io/badge/help-gitter-ff0066.svg)](https://gitter.im/hoaproject/central)
-[![Documentation](https://img.shields.io/badge/documentation-hack_book-ff0066.svg)](https://central.hoa-project.net/Documentation/Library/Stream)
-[![Board](https://img.shields.io/badge/organisation-board-ff0066.svg)](https://waffle.io/hoaproject/stream)
+<table>
+<tr><th>Original package</th><th>Forked package</th></tr>
+<tr><td>hoa/ruler</td><td>hiqdev/hoa-ruler</td></tr>
+<tr><td>hoa/compiler</td><td>hiqdev/hoa-compiler</td></tr>
+<tr><td>hoa/protocol</td><td>hiqdev/hoa-protocol</td></tr>
+<tr><td>hoa/iterator</td><td>hiqdev/hoa-iterator</td></tr>
+<tr><td>hoa/iterator</td><td>hiqdev/hoa-stream</td></tr>
+</table>
+You can simply replace requirements in composer.json from hoa packages to the corresponding forked packages: there is no need to change something in the codebase.
 
-This library is a high-level abstraction over PHP streams. It
-includes:
+If you use someone's package, that requires hoa – simply add forks to your project root composer.json: we have marked forks as a replacement, so composer will install them instead of the original packages.
 
-  * Stream manipulations: Open, close, auto-close, timeout, blocking
-    mode, buffer size, metadata etc.,
-  * Stream notifications: Depending of the stream wrapper, the
-    supported listeners are the following: `authrequire`,
-    `authresult`, `complete`, `connect`, `failure`, `mimetype`,
-    `progress`, `redirect`, `resolve`, and `size`,
-  * Context: Allow to pass options and parameters to the stream
-    wrappers, for instance HTTP headers,
-  * Filter: A function that sits between the source and the
-    destination of a stream, useful for instance to encrypt/decrypt a
-    data on-the-fly, or for more advanced tricks like instrumentation,
-  * Wrapper: Declare user-defined protocols that will naturally be
-    handled by the PHP standard library (like `fopen`,
-    `stream_get_contents` etc.),
-  * Interfaces: One interface per capability a stream can offer.
-
-This library is the foundation of several others, e.g.
-[`Hoa\File`](https://central.hoa-project.net/Resource/Library/File) or
-[`Hoa\Socket`](https://central.hoa-project.net/Resource/Library/Socket)
-(and so
-[`Hoa\Websocket`](https://central.hoa-project.net/Resource/Library/Websocket)).
-
-[Learn more](https://central.hoa-project.net/Documentation/Library/Stream).
-
-## Installation
-
-With [Composer](https://getcomposer.org/), to include this library into
-your dependencies, you need to
-require [`hoa/stream`](https://packagist.org/packages/hoa/stream):
-
-```sh
-$ composer require hoa/stream '~1.0'
-```
-
-For more installation procedures, please read [the Source
-page](https://hoa-project.net/Source.html).
+## Versions
+We've forked from the latest hoa package versions and bump own versions starting from 1.0.
 
 ## Testing
 

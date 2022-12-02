@@ -1,5 +1,5 @@
 {
-    "name"       : "hiqdev/hoa-stream",
+    "name"       : "xdimedrolx/hoa-stream",
     "description": "The Hiqdev Hoa\\Stream library.",
     "type"       : "library",
     "keywords"   : ["library", "stream", "bucket", "composite", "context",
@@ -10,7 +10,7 @@
         "hoa/consistency": "~1.0",
         "hoa/event"      : "~1.0",
         "hoa/exception"  : "~1.0",
-        "hiqdev/hoa-protocol"   : "~1.0"
+        "xdimedrolx/hoa-protocol": "~1.0"
     },
     "require-dev": {
         "hoa/test": "~2.0"
